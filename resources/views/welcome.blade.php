@@ -25,7 +25,14 @@
                         This week you have showcase only the articles Writte by
                         <a href="/users/{{$article->user_id}}/articles">{{$article->user->name}}</a>
                     </h3>
-                    <strong>Showing the first four results</strong>
+                    <div>
+                        <strong>Showing the first four results</strong>
+                    </div>
+                    <div class="font-italic">His first article is:</div>
+                    <a href="/articles/{{$article->user->article->id}}">
+                        {{ $article->user->find($article->user_id)->article->title }}
+                    </a>
+
                     <hr class="linenums" />
                     <h4 class="font-italic">Tags Cloud</h4>
                     @foreach($tags as $tag)

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Country;
 use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
@@ -58,7 +59,19 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $tags = Article::find($article->id)->tags;
+        $article = Article::find($article->id);
+        $comments = $article->comments;
+        $user = User::find($article->user_id);
+        $country = Country::where('id',$user->country_id)->get()->first();
+
+        return view('articles.show',compact('tags','article','country','user','comments'));
+    }
+
+    public function articles($id)
+    {
+        $user = User::find($id);
+        return view('articles.articles',compact('user'));
     }
 
     /**
