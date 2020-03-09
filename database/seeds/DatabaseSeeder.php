@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             $user->profile()->save(factory(App\Profile::class)->make());
         });
 
+        factory(App\Country::class,20)->create();
+
         factory(App\Tag::class,20)->create();
 
         factory(App\Article::class,50)->create()->each(function($article){
@@ -25,9 +27,9 @@ class DatabaseSeeder extends Seeder
         });
 
         factory(App\Role::class,3)->create()->each(function($role){
-            $ids = range(1,5);
+            $ids = range(1,2);
             shuffle($ids);
-            $sliced = array_slice($ids,1,20);
+            $sliced = array_slice($ids,1,5);
             $role->users()->attach($sliced);
         });
     }

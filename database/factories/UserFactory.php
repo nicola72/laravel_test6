@@ -18,6 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
+        'country_id' => $faker->randomDigit,
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
@@ -51,5 +52,11 @@ $factory->define(App\Tag::class, function (Faker $faker){
 $factory->define(App\Role::class, function (Faker $faker){
     return [
         'name' => $faker->word
+    ];
+});
+
+$factory->define(App\Country::class, function (Faker $faker){
+    return [
+        'name' => $faker->country
     ];
 });

@@ -73,6 +73,8 @@ class ComposerStaticInit83134a8357ac1692f522f90709bbeb63
         ),
         'R' => 
         array (
+            'RepositoryInterface\\' => 20,
+            'RepositoryDB\\' => 13,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -279,6 +281,14 @@ class ComposerStaticInit83134a8357ac1692f522f90709bbeb63
         'Seld\\JsonLint\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
+        ),
+        'RepositoryInterface\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Repositories/Interfaces',
+        ),
+        'RepositoryDB\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Repositories/DBRepositories',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -3867,6 +3877,7 @@ class ComposerStaticInit83134a8357ac1692f522f90709bbeb63
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RepositoryInterface\\UserRepositoryInterface' => __DIR__ . '/../..' . '/app/Repositories/Interfaces/UserRepositoryInterface.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

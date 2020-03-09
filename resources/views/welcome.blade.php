@@ -19,29 +19,7 @@
                     <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
                 </nav>
             </div>
-            <aside class="col-md-4 blog-sidebar">
-                <div class="p-3">
-                    <h3 class="blog-post-title">
-                        This week you have showcase only the articles Writte by
-                        <a href="/users/{{$article->user_id}}/articles">{{$article->user->name}}</a>
-                    </h3>
-                    <div>
-                        <strong>Showing the first four results</strong>
-                    </div>
-                    <div class="font-italic">His first article is:</div>
-                    <a href="/articles/{{$article->user->article->id}}">
-                        {{ $article->user->find($article->user_id)->article->title }}
-                    </a>
 
-                    <hr class="linenums" />
-                    <h4 class="font-italic">Tags Cloud</h4>
-                    @foreach($tags as $tag)
-                        <p class="font-italic">
-                            {{$tag->tag}}
-                        </p>
-                    @endforeach
-                </div>
-            </aside>
         </div>
     </div>
 @endsection

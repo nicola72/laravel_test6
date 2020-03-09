@@ -61,11 +61,11 @@ class ArticleController extends Controller
     {
         $tags = Article::find($article->id)->tags;
         $article = Article::find($article->id);
-        $comments = $article->comments;
+        //$comments = $article->comments;
         $user = User::find($article->user_id);
         $country = Country::where('id',$user->country_id)->get()->first();
 
-        return view('articles.show',compact('tags','article','country','user','comments'));
+        return view('articles.show',compact('tags','article','country'));
     }
 
     public function articles($id)

@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Repositories\DBRepositories\DBUserRepository;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $users;
+
+    public function __construct(DBUserRepository $users)
+    {
+        $this->users = $users;
+    }
+
     public function index()
     {
-        //
+        $users = $this->users->all();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -46,7 +50,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        $roles = User::find($user->id)->roles;
+        $user = User::find($user->id);
+
+        return view('users.show',compact('user','roles'));
     }
 
     /**
